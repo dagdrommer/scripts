@@ -1,18 +1,19 @@
 # Function to calculate saturation vapor pressure using Tetens equation
 saturation_vapor_pressure <- function(temperature) {
-  # Constants
-  A1 <- 17.27
-  B1 <- 237.7
-  A2 <- 21.87
-  B2 <- 265.5
+  # Constants for the Tetens equation for liquid water
+  A_water <- 17.27
+  B_water <- 237.7
   
-  # Different equations for different temperature ranges
-  if (temperature < 0) {
-    alpha <- A2 * temperature / (B2 + temperature)
-  } else {
-    alpha <- A1 * temperature / (B1 + temperature)
+  # Constants for the Tetens equation for ice
+  A_ice <- 21.87
+  B_ice <- 265.5
+  
+  # Calculate saturation vapor pressure for liquid water
+  if (temperature > 0) {
+    alpha <- (A_water * temperature) / (B_water + temperature)
+  } else { # Calculate saturation vapor pressure for ice
+    alpha <- (A_ice * temperature) / (B_ice + temperature)
   }
-  
   return(exp(alpha))
 }
 
