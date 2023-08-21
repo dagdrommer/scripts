@@ -34,9 +34,8 @@ relative_humidity_new_temp <- function(current_humidity, current_temp, new_temp)
 }
 
 # Example usage
-current_humidity <- 40 # in percentage
-current_temp <- 29     # in Celsius
-new_temp <- 23         # in Celsius
+current_humidity <- 38 # in percentage
+current_temp <- 32     # in Celsius
+new_temp <- 23.5         # in Celsius
 
-new_humidity <- relative_humidity_new_temp(current_humidity, current_temp, new_temp)
-cat("The estimated relative humidity at", new_temp, "°C is", new_humidity, "%\n")
+new_humidity <- relative_humidity_new_temp(current_humidity, current_temp, new_temp); cat("The estimated relative humidity at", new_temp, "°C is", new_humidity, "%\n")
